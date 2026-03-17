@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Earn App</title>
+  <style>
+    body { font-family: Arial; text-align: center; padding: 50px; }
+    button { padding: 15px; font-size: 18px; margin-top: 20px; }
+  </style>
+</head>
+
+<body>
+
+<h1>Watch Ads & Earn</h1>
+<h2>Coins: <span id="coins">0</span></h2>
+
+<button onclick="watchAd()">Watch Ad</button>
+
+<script>
+let coins = localStorage.getItem("coins") || 0;
+document.getElementById("coins").innerText = coins;
+
+function watchAd() {
+
+  // Redirect to ad link (replace with real ad link)
+  window.open("https://www.profitableratecpm.com/xxxxx", "_blank");
+
+  // Give reward after delay
+  setTimeout(() => {
+    coins = parseInt(coins) + 10;
+    localStorage.setItem("coins", coins);
+    document.getElementById("coins").innerText = coins;
+
+    alert("You earned 10 coins!");
+  }, 5000);
+}
+</script>
+
+</body>
+</html>
